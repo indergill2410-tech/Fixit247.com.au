@@ -1,0 +1,1 @@
+export default function HeroLeft(){return <div><p className='inline-flex bg-white/10 rounded-full px-4 py-2 text-sm'><span className='text-brand-accent mr-2'>●</span>Urgent Fix 24/7 — tradies online now</p><h1 className='text-7xl font-display font-extrabold mt-8'>Emergency repairs,<br/><span className='text-brand-accent'>fixed fast.</span></h1></div>}
