@@ -5,33 +5,38 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p ${PORT:-5000}",
     "lint": "next lint",
-    "prisma:generate": "prisma generate",
-    "prisma:seed": "tsx prisma/seed.ts"
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@auth/prisma-adapter": "^2.7.4",
-    "@hookform/resolvers": "^3.9.1",
+    "@auth/prisma-adapter": "^2.11.1",
     "@prisma/client": "^5.22.0",
+    "@sendgrid/mail": "^8.1.4",
     "bcryptjs": "^2.4.3",
-    "framer-motion": "^11.11.10",
+    "framer-motion": "^11.18.2",
     "next": "14.2.5",
     "next-auth": "5.0.0-beta.25",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-hook-form": "^7.53.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.2",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.17.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.5",
     "postcss": "^8.4.47",
     "prisma": "^5.22.0",
-    "tailwindcss": "^3.4.13",
-    "tsx": "^4.19.1",
+    "tailwindcss": "^3.4.14",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   }
 }

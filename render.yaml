@@ -5,4 +5,36 @@ services:
     region: oregon
     plan: free
     buildCommand: npm install && npx prisma generate && npm run build
-    startCommand: npm start
+    startCommand: npm start -- -p $PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fixit247-db
+          property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: NEW_SECRET
+        generateValue: true
+      - key: APP_URL
+        value: https://www.fixit247.com.au
+      - key: PORT
+        value: "5000"
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_EMAILS
+        value: admin@fixit247.com.au
+      - key: FROM_EMAIL
+        value: admin@fixit247.com.au
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: SENDGRID_OTP_TEMPLATE_ID
+        value: d-586681bb6f4ec59c6dbe7603da25e7
+      - key: SENDGRID_CUSTOMER_WELCOME_TEMPLATE_ID
+        value: d-f44b8286840d4448b801d9e4e0682c3c
+      - key: SENDGRID_TRADIE_WELCOME_TEMPLATE_ID
+        value: d-9ff5e225679540cea4522561a3de727f
+
+databases:
+  - name: fixit247-db
+    plan: free
+    region: oregon

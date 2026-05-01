@@ -80,3 +80,12 @@ enum JobStatus {
   COMPLETED
   CANCELLED
 }
+
+
+model OtpToken {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  hashedOtp String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
