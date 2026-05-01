@@ -1,5 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root { --transition-fast:150ms cubic-bezier(0.4,0,0.2,1); --transition-base:200ms cubic-bezier(0.4,0,0.2,1); --transition-slow:300ms cubic-bezier(0.4,0,0.2,1); }
-body { @apply bg-brand-bg text-white font-body; }
+
+:root {
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  @apply bg-brand-bg font-body text-white antialiased;
+}
+
+.hero-dot {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.8px, transparent 0.8px);
+  background-size: 5px 5px;
+}
