@@ -1,7 +1,9 @@
 import './globals.css';
-import { Inter, Sora } from 'next/font/google';
-const inter = Inter({ subsets:['latin'], variable:'--font-inter' });
-const sora = Sora({ subsets:['latin'], variable:'--font-sora', weight:['800'] });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang='en'><body className={`${inter.variable} ${sora.variable}`}>{children}</body></html>;
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
 }
